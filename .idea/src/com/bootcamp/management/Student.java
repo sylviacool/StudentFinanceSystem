@@ -42,6 +42,25 @@ public class Student {
         return balance;
     }
 
+    public void withdraw(double amount) {  // amount comes from method call
+        if (amount <= this.balance) {      // this.balance comes from object creation
+            this.balance -= amount;  // update the stored balance
+            System.out.println("Take your cash: $" + amount);
+            System.out.println("Remaining balance: $" + this.balance);
+        } else {
+            System.out.println("Insufficient funds.");
+        }
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Amount sucessfully deposited");
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
     @Override
     public String toString() {
         return "ID: " + id +
